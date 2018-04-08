@@ -1,8 +1,6 @@
-workspace/.metadata/
-workspace/.recommenders/
+.metadata/
+.recommenders/
 .DS_Store
-alurapic/node_modules
-alurapic/.idea
-*/.idea/*
-*/__MACOSX/*
-*/.idea/*
+node_modules
+.idea
+__MACOSX
