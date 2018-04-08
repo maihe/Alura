@@ -4,3 +4,11 @@
 node_modules
 .idea
 __MACOSX
+Servers
+*.sublime*
+.classpath
+.project
+.settings
+.metadata
+classes
+Servers
