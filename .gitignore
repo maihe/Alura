@@ -3,3 +3,6 @@ workspace/.recommenders/
 .DS_Store
 alurapic/node_modules
 alurapic/.idea
+*/.idea/*
+*/__MACOSX/*
+*/.idea/*
