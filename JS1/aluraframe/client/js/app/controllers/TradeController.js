@@ -7,34 +7,30 @@ class TradeController {
             this._inputDate = $('#date');
             this._inputQuantity = $('#quantity');
             this._inputValue = $('#value');
-            this._form = $("#tForm");
+            this._tradeList = new TradeList();
       }
 
       add(event) {
             event.preventDefault();
-
-            let date = new Date(...this._inputDate
-                  .value
-                  .split('-')
-                  .map((item, indice) => item - indice % 2)
-            );
+            this._tradeList.add(this._instantiateTrade());
+            this._cleanForm();
+            console.log(this._tradeList._list);
+      }
 
 
-            let trade = new Trade(
-                  date,
+      _instantiateTrade() {
+            return new Trade(
+                  DateHelper.textToDate(this._inputDate.value),
                   this._inputQuantity.value,
                   this._inputValue.value
             );
-
-            console.log(trade);
-            this.cleanForm();
       }
 
-      cleanForm() {
-           this._inputDate.value = "";
-           this._inputDate.focus;
-           this._inputQuantity.value = "";
-           this._inputValue.value = "";
-           
+      _cleanForm() {
+            this._inputDate.value = "";
+            this._inputQuantity.value = "";
+            this._inputValue.value = "";
+            this._inputDate.focus();
+
       }
 }
